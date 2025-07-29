@@ -14,10 +14,12 @@ const alternatives = [
     images: "images/cat-05.gif",
   },
 ];
+
 const ohyes = {
   text: "I knew you’d say yes! 🥳😄 Thank you so much, Hajra. I promise I’ll never hurt you 💔 or walk away from you 🚶‍♂️❌. I joke a lot 😅, but honestly… you really mean a lot to me 💖. I don’t ever want to lose you 😔. If you choose to be my friend 🤝, I’ll do my best to make sure you never regret it 🌟. So, can I hold your hand, Hajra? 🥺🤲❤️",
   images: "images/cat-yes.gif",
 };
+
 const title = document.querySelector(".title");
 const text = document.querySelector(".text");
 const cat = document.querySelector(".cat");
@@ -27,7 +29,6 @@ const errorButton = document.querySelector(".button__error");
 let count = 0;
 
 function updateDisplay(item) {
-  console.log(item);
   cat.src = item.images;
   text.innerHTML = item.text;
 }
@@ -43,7 +44,6 @@ buttons.forEach((button) => {
   button.addEventListener("click", () => {
     if (button.textContent === "YES") {
       updateDisplay(ohyes);
-      // Commented out the following line so that buttons won't hide immediately
       buttons.forEach((btn) => (btn.style.display = "none"));
       title.innerHTML = "You are the best Hajra! 🥂😍🥳";
     }
